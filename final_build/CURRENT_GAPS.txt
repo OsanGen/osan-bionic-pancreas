@@ -1,2 +1,1 @@
-- responsive visual QA | in progress | inspect the managed-runner screenshot matrix and correct every visible defect
-- public release | pending | promote the approved redesign to `main`, rebuild Pages, and verify the live URL
+No open gaps for the requested redesign release.

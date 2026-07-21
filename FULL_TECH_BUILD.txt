@@ -2,13 +2,13 @@
 
 ## 1. Snapshot header
 
-- Timestamp: 2026-07-20 22:45:13 EDT
+- Timestamp: 2026-07-20 23:34:00 EDT
 - Repository: `/Volumes/data/AI-P {Concept}`
 - Branch: `main`
-- HEAD: `9d13a8ee353103c6e069a1c6127086390e281653`
-- Dirty state: yes; only this self-referential snapshot refresh is uncommitted
+- HEAD: `6114f90094d1d58ce9cd8cbf95f37defedb8283c`
+- Dirty state: yes; release-closure receipts are being recorded
 - Languages: HTML, CSS, JavaScript, SVG
-- Package manager: npm scripts only; no runtime packages or lockfile
+- Package manager: npm scripts only; Playwright is installed ephemerally in the managed QA job and no lockfile is shipped
 - Instruction files: global `/Users/abelsanchez/.codex/AGENTS.md`; no repository-local instruction file
 
 ## 2. Purpose and user-facing artifacts
@@ -26,6 +26,7 @@ Browser → `index.html` → `styles.css` + `script.js` → five local SVG scene
 - Evidence register: five outbound regulatory or peer-reviewed references plus explicit concept boundaries.
 - Trust boundary: all state stays in the browser; external access occurs only when the user opens a source link.
 - Deployment: repository-root static files served over HTTPS by GitHub Pages.
+- Visual QA: GitHub Actions uses a pinned Playwright container to capture and inspect a responsive viewport matrix without loading Mac A.
 
 ## 4. Entrypoints and run commands
 
@@ -33,6 +34,7 @@ Browser → `index.html` → `styles.css` + `script.js` → five local SVG scene
 - Local server: `python3 -m http.server 4173`
 - Local URL: `http://127.0.0.1:4173/`
 - Validation: `npm run check`
+- Managed screenshots: GitHub Actions workflow `Visual QA`
 - Public URL: `https://osangen.github.io/osan-bionic-pancreas/`
 - Public source: `https://github.com/OsanGen/osan-bionic-pancreas`
 
@@ -47,10 +49,10 @@ Browser → `index.html` → `styles.css` + `script.js` → five local SVG scene
 
 - `node --check script.js`
 - `node --test tests/site.test.mjs`
-- Browser QA at 1440 × 900 and 390 × 844
+- Managed browser QA at 1440 × 900, 1280 × 720, 768 × 1024, and 390 × 844
 - No horizontal mobile overflow
 - Exactly one active visual and selected stage
-- No browser console warnings or errors
+- No clipped or overlapping SVG labels, undersized labels, first-viewport failure, or browser console/page/request errors
 - 1200 × 630 social preview dimensions
 - Live HTTP, DOM, and interaction verification after Pages deployment
 
@@ -60,28 +62,33 @@ Browser → `index.html` → `styles.css` + `script.js` → five local SVG scene
 - OSAN visual system: complete
 - Responsive layout and keyboard/touch navigation: complete
 - Medical evidence register and concept disclaimer: complete
-- Automated tests: 6 passing
+- Automated tests: 8 passing
 - Social preview: complete
 - Public GitHub repository: complete
-- GitHub Pages deployment: complete and live-verified
+- Responsive screenshot matrix: complete and human-reviewed; final managed run `29798725992` passed on commit `6114f90`
+- GitHub Pages deployment: complete and live-verified; deployed HTML, CSS, JavaScript, and social preview match commit `6114f90` byte-for-byte
 
 ## 8. Risk register
 
 - Medical-device concept risk: the design target is not a performance or regulatory claim; the page labels it as a concept and not medical advice.
 - Evidence drift: research and regulatory status can change; source labels are date-stamped July 20, 2026.
 - Third-party font availability: system fallbacks preserve usability if Google Fonts is unavailable.
-- Static-host risk: low; the Pages build, HTTPS response, deployed DOM, and Product-scene interaction were verified after the first push.
+- Static-host risk: low; the Pages build, HTTPS response, deployed assets, and exact file hashes were verified after the redesign release.
+- Workflow maintenance risk: GitHub's Pages-owned workflow currently emits a Node.js deprecation annotation; it does not affect the successful site build or deployment and is not controlled by this repository.
 
 ## 9. Rolling change log
 
-1. 2026-07-20 — Built five-scene OSAN visual thesis, evidence register, responsive controller, tests, documentation, and social card.
-2. 2026-07-20 — Published content commit `d6aedb7`, pushed closure commit `9d13a8e`, enabled HTTPS Pages, and verified the live page and Product-scene interaction.
+1. 2026-07-20 — Rebuilt the visual hierarchy around a compact first viewport, intrinsic artwork proportions, shorter narrative copy, and cleaner five-scene diagrams.
+2. 2026-07-20 — Added managed Playwright screenshot QA for desktop, short desktop, tablet, mobile, and social-card views; corrected the equation, landscape, roadmap, and small-screen defects found during iteration.
+3. 2026-07-20 — Final run `29798725992` passed from commit `6114f90`; promoted the commit to `main`, deployed Pages, and verified exact live asset parity.
+4. 2026-07-20 — Built five-scene OSAN visual thesis, evidence register, responsive controller, tests, documentation, and social card.
+5. 2026-07-20 — Published content commit `d6aedb7`, pushed closure commit `9d13a8e`, enabled HTTPS Pages, and verified the initial live page and Product-scene interaction.
 
 ## 10. Refresh procedure
 
 1. Read this file before scanning the repository.
 2. Compare branch, HEAD, dirty state, dependency files, entrypoints, and `final_build/BUILD_MAP.txt`.
 3. Run `npm run check`.
-4. Serve the root locally and verify desktop/mobile layout and scene interactions.
-5. After deployment, verify the GitHub Pages status, HTTPS response, live DOM, and one scene transition.
+4. Push a design branch to run the managed screenshot matrix and inspect its downloaded artifact at full resolution.
+5. After deployment, verify the GitHub Pages status, HTTPS response, live DOM, exact asset hashes, and one scene transition when browser capacity is available.
 6. Update this snapshot without storing credentials or secret values.

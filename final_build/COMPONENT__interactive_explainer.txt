@@ -47,7 +47,8 @@ Explain the two-part T1D cure problem, modern cure research, the OSAN AI bionic 
 - Passed: prohibited medical hype claims are absent.
 - Passed: desktop and mobile layouts have no horizontal overflow or overlap.
 - Passed: public GitHub Pages URL returns HTTP 200 and the deployed Product scene updates the URL, copy, counter, selected stage, and artwork together.
-- Pending redesign proof: desktop, 1280 × 720 short desktop, tablet, 390 × 844 mobile, and 1200 × 630 social-card screenshots are visually clean and machine checks find no clipping, overlap, horizontal overflow, or browser errors.
+- Passed redesign proof: managed run `29798725992` captured desktop, 1280 × 720 short desktop, tablet, 390 × 844 mobile, and 1200 × 630 social-card views from commit `6114f90`; human review found the final matrix clean and machine checks found no clipping, overlap, horizontal overflow, undersized labels, first-viewport failure, or browser errors.
+- Passed release proof: GitHub Pages deployed commit `6114f90`; the live HTML, CSS, JavaScript, and social preview match the approved repository files byte-for-byte.
 
 ## Observability
 
@@ -56,6 +57,7 @@ Explain the two-part T1D cure problem, modern cure research, the OSAN AI bionic 
 - GitHub Pages deployment status and HTTP response provide live receipts.
 - A 1200 × 630 social card is versioned as `social-preview.jpg` for share previews.
 - `scripts/capture-visual-qa.mjs` records per-scene geometry, clipping, overflow, console, page-error, and request-failure signals in `report.json` beside the screenshot artifact.
+- Final screenshot artifact: managed workflow run `29798725992`, retained by GitHub Actions for five days and downloaded to the external Codex runtime evidence directory.
 
 ## Security and privacy
 
