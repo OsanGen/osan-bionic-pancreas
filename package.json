@@ -1,0 +1,13 @@
+{
+  "name": "osan-bionic-pancreas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OSAN five-scene visual thesis for the path toward a bionic pancreas.",
+  "scripts": {
+    "test": "node --test tests/site.test.mjs",
+    "check": "node --check script.js && node --test tests/site.test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

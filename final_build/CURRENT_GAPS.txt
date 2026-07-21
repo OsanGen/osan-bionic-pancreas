@@ -1,0 +1,1 @@
+- public deployment | pending | create the GitHub repository, enable Pages, and verify the live URL

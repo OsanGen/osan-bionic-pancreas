@@ -1,0 +1,24 @@
+# BUILD MAP — OSAN Bionic Pancreas Visual Thesis
+
+## Runtime shape
+
+Browser → `index.html` → `styles.css` + `script.js` → five local SVG story scenes
+
+No backend, database, analytics, cookies, authentication, remote API calls, or user-data collection.
+
+## Components
+
+- Story controller: maps navigation, keyboard input, URL hashes, copy, progress, and active artwork.
+- Visual system: OSAN CogSec Pastel tokens, Poppins/Inter typography, proof-first geometry, responsive layout.
+- Medical evidence register: five outbound primary-source references and explicit concept boundary.
+- Static host: GitHub Pages serving the repository root over HTTPS.
+
+## Trust boundaries
+
+- User interaction stays in the browser.
+- External navigation occurs only after a user selects a clearly labeled source link.
+- Medical claims are editorial content; no diagnosis, dosing, or treatment recommendation is generated.
+
+## Data flow
+
+User selects stage → local controller changes active scene → local DOM/SVG updates → stable URL hash records the scene.

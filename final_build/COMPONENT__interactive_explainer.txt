@@ -1,0 +1,62 @@
+# COMPONENT — Interactive Explainer
+
+## Purpose
+
+Explain the two-part T1D cure problem, modern cure research, the OSAN AI bionic pancreas concept, and the biohybrid roadmap in a concise investor-ready visual story.
+
+## Inputs
+
+- User stage selection through buttons, previous/next controls, arrow keys, Home/End, or URL hash.
+- Static editorial copy and SVG artwork stored locally.
+
+## Outputs
+
+- One active story scene.
+- Updated headline, evidence label, takeaway, progress, caption, and URL hash.
+- Five primary-source links in the evidence section.
+
+## State
+
+- `activeStage`: integer from 0 through 4.
+- Stable hashes: `problem`, `equation`, `landscape`, `product`, `roadmap`.
+
+## Edge cases
+
+- Unknown URL hashes resolve to stage 0.
+- Previous/next movement is bounded to valid scenes.
+- Reduced-motion users receive effectively immediate transitions.
+- Narrow screens stack the narrative and artwork without horizontal page scrolling.
+- JavaScript-disabled users receive an explicit notice.
+
+## Dependencies
+
+- Browser-native HTML, CSS, JavaScript, and SVG.
+- Google Fonts for Poppins and Inter; system-font fallbacks are defined.
+- No package runtime dependencies.
+
+## Acceptance checks
+
+- Exactly five controls map to exactly five scenes.
+- Every scene has an accessible SVG title and description.
+- Keyboard and pointer controls update the same state.
+- All public sources use HTTPS.
+- Prohibited medical hype claims are absent.
+- Desktop and mobile screenshots have no clipping or overlap.
+- Public GitHub Pages URL returns the current artifact.
+
+## Observability
+
+- URL hash makes active state visible and shareable.
+- Git commit identifies the exact deployed source.
+- GitHub Pages deployment status and HTTP response provide live receipts.
+- A 1200 × 630 social card is versioned as `social-preview.png` for share previews.
+
+## Security and privacy
+
+- No secrets or sensitive configuration.
+- No forms, tracking, cookies, storage, or personal data.
+- No remote code execution or dynamic content fetches.
+
+## Configuration
+
+- None. All content and tokens are versioned in source.
