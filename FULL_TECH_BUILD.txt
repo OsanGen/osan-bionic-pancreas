@@ -2,11 +2,11 @@
 
 ## 1. Snapshot header
 
-- Timestamp: 2026-07-20 22:42:02 EDT
+- Timestamp: 2026-07-20 22:44:05 EDT
 - Repository: `/Volumes/data/AI-P {Concept}`
 - Branch: `main`
-- HEAD: unborn; initial public release is the next operation
-- Dirty state: yes; all release files are untracked before the initial commit
+- HEAD: `d6aedb72f3b189e16e02ae133fd9b35f51bdf620`
+- Dirty state: yes; deployment receipts are being recorded after the verified release
 - Languages: HTML, CSS, JavaScript, SVG
 - Package manager: npm scripts only; no runtime packages or lockfile
 - Instruction files: global `/Users/abelsanchez/.codex/AGENTS.md`; no repository-local instruction file
@@ -33,7 +33,8 @@ Browser → `index.html` → `styles.css` + `script.js` → five local SVG scene
 - Local server: `python3 -m http.server 4173`
 - Local URL: `http://127.0.0.1:4173/`
 - Validation: `npm run check`
-- Intended public URL: `https://osangen.github.io/osan-bionic-pancreas/`
+- Public URL: `https://osangen.github.io/osan-bionic-pancreas/`
+- Public source: `https://github.com/OsanGen/osan-bionic-pancreas`
 
 ## 5. Dependencies and toolchain
 
@@ -61,18 +62,20 @@ Browser → `index.html` → `styles.css` + `script.js` → five local SVG scene
 - Medical evidence register and concept disclaimer: complete
 - Automated tests: 6 passing
 - Social preview: complete
-- Public GitHub repository and Pages deployment: pending
+- Public GitHub repository: complete
+- GitHub Pages deployment: complete and live-verified
 
 ## 8. Risk register
 
 - Medical-device concept risk: the design target is not a performance or regulatory claim; the page labels it as a concept and not medical advice.
 - Evidence drift: research and regulatory status can change; source labels are date-stamped July 20, 2026.
 - Third-party font availability: system fallbacks preserve usability if Google Fonts is unavailable.
-- Static-host risk: GitHub Pages deployment must be verified after the first push.
+- Static-host risk: low; the Pages build, HTTPS response, deployed DOM, and Product-scene interaction were verified after the first push.
 
 ## 9. Rolling change log
 
 1. 2026-07-20 — Built five-scene OSAN visual thesis, evidence register, responsive controller, tests, documentation, and social card.
+2. 2026-07-20 — Published commit `d6aedb7` to a public GitHub repository, enabled HTTPS Pages, and verified the live page and Product-scene interaction.
 
 ## 10. Refresh procedure
 

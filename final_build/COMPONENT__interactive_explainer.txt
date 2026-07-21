@@ -14,6 +14,8 @@ Explain the two-part T1D cure problem, modern cure research, the OSAN AI bionic 
 - One active story scene.
 - Updated headline, evidence label, takeaway, progress, caption, and URL hash.
 - Five primary-source links in the evidence section.
+- Public experience: https://osangen.github.io/osan-bionic-pancreas/
+- Public source: https://github.com/OsanGen/osan-bionic-pancreas
 
 ## State
 
@@ -36,13 +38,13 @@ Explain the two-part T1D cure problem, modern cure research, the OSAN AI bionic 
 
 ## Acceptance checks
 
-- Exactly five controls map to exactly five scenes.
-- Every scene has an accessible SVG title and description.
-- Keyboard and pointer controls update the same state.
-- All public sources use HTTPS.
-- Prohibited medical hype claims are absent.
-- Desktop and mobile screenshots have no clipping or overlap.
-- Public GitHub Pages URL returns the current artifact.
+- Passed: exactly five controls map to exactly five scenes.
+- Passed: every scene has an accessible SVG title and description.
+- Passed: keyboard and pointer controls update the same state.
+- Passed: all public sources use HTTPS.
+- Passed: prohibited medical hype claims are absent.
+- Passed: desktop and mobile layouts have no horizontal overflow or overlap.
+- Passed: public GitHub Pages URL returns HTTP 200 and the deployed Product scene updates the URL, copy, counter, selected stage, and artwork together.
 
 ## Observability
 
