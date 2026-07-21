@@ -4,7 +4,7 @@ import { extname, join, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 
-const projectRoot = fileURLToPath(new URL("../", import.meta.url));
+const projectRoot = resolve(fileURLToPath(new URL("../", import.meta.url)));
 const outputDirectory = join(projectRoot, "visual-qa");
 const baseUrl = "http://127.0.0.1:4173";
 
