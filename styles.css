@@ -693,6 +693,7 @@ h2 {
 
   .story-layout {
     min-height: 0;
+    gap: 24px;
   }
 
   h1 {
@@ -778,13 +779,20 @@ h2 {
     padding-right: 13px;
   }
 
+  .scene-art svg {
+    width: 110%;
+    height: 110%;
+    flex: 0 0 auto;
+  }
+
   .svg-label {
     font-size: 18px;
   }
 
+  .svg-kicker,
   .svg-micro,
   .svg-micro-strong {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 

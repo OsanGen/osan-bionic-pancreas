@@ -68,17 +68,31 @@ function inspectLayout() {
   const activeScene = document.querySelector(".scene-art.is-active");
   const frame = document.querySelector(".visual-frame")?.getBoundingClientRect();
   const activeText = activeScene ? [...activeScene.querySelectorAll("text")] : [];
+  const textBoxes = activeText.map((element) => ({
+    box: element.getBoundingClientRect(),
+    text: element.textContent.trim()
+  })).filter(({ box, text }) => text && box.width > 0 && box.height > 0);
   const clippedLabels = frame
-    ? activeText.filter((element) => {
-        const box = element.getBoundingClientRect();
+    ? textBoxes.filter(({ box }) => {
         return box.left < frame.left - 1 || box.right > frame.right + 1 || box.top < frame.top - 1 || box.bottom > frame.bottom + 1;
-      }).map((element) => element.textContent.trim()).filter(Boolean)
+      }).map(({ text }) => text)
     : [];
-  const renderedLabelHeights = activeText
-    .map((element) => element.getBoundingClientRect().height)
-    .filter((height) => height > 0);
+  const overlappingLabels = [];
+  for (let index = 0; index < textBoxes.length; index += 1) {
+    for (let compareIndex = index + 1; compareIndex < textBoxes.length; compareIndex += 1) {
+      const first = textBoxes[index];
+      const second = textBoxes[compareIndex];
+      const horizontalIntersection = Math.min(first.box.right, second.box.right) - Math.max(first.box.left, second.box.left);
+      const verticalIntersection = Math.min(first.box.bottom, second.box.bottom) - Math.max(first.box.top, second.box.top);
+
+      if (horizontalIntersection > 1 && verticalIntersection > 1) {
+        overlappingLabels.push(`${first.text} ↔ ${second.text}`);
+      }
+    }
+  }
+  const renderedLabelHeights = textBoxes.map(({ box }) => box.height);
   const columnsOverlap = window.innerWidth > 900 && copy && visual
-    ? copy.right > visual.left || visual.left < copy.right
+    ? copy.right > visual.left
     : false;
   const primaryBottom = Math.max(copy?.bottom ?? 0, caption?.bottom ?? visual?.bottom ?? 0);
 
@@ -89,6 +103,7 @@ function inspectLayout() {
     firstViewportFits: primaryBottom <= window.innerHeight + 1,
     horizontalOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
     minimumRenderedLabelHeight: renderedLabelHeights.length ? Math.min(...renderedLabelHeights) : null,
+    overlappingLabels,
     primaryBottom,
     selectedStages: document.querySelectorAll(".stage-button[aria-selected='true']").length,
     story,
@@ -146,6 +161,7 @@ try {
       if (metrics.columnsOverlap) sceneFailures.push("desktop columns overlap");
       if (!metrics.firstViewportFits) sceneFailures.push(`primary story ends at ${metrics.primaryBottom.toFixed(1)}px`);
       if (metrics.clippedLabels.length) sceneFailures.push(`clipped SVG labels: ${metrics.clippedLabels.join(", ")}`);
+      if (metrics.overlappingLabels.length) sceneFailures.push(`overlapping SVG labels: ${metrics.overlappingLabels.join(", ")}`);
       if (metrics.minimumRenderedLabelHeight !== null && metrics.minimumRenderedLabelHeight < 5.5) {
         sceneFailures.push(`smallest rendered SVG label is ${metrics.minimumRenderedLabelHeight.toFixed(1)}px high`);
       }
