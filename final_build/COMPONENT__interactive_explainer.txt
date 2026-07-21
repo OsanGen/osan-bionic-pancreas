@@ -28,6 +28,7 @@ Explain the two-part T1D cure problem, modern cure research, the OSAN AI bionic 
 - Previous/next movement is bounded to valid scenes.
 - Reduced-motion users receive effectively immediate transitions.
 - Narrow screens stack the narrative and artwork without horizontal page scrolling.
+- Short desktop screens use the artwork's intrinsic 12:7 ratio instead of fixed scene heights, keeping the full primary story in the first viewport.
 - JavaScript-disabled users receive an explicit notice.
 
 ## Dependencies
@@ -35,6 +36,7 @@ Explain the two-part T1D cure problem, modern cure research, the OSAN AI bionic 
 - Browser-native HTML, CSS, JavaScript, and SVG.
 - Google Fonts for Poppins and Inter; system-font fallbacks are defined.
 - No package runtime dependencies.
+- Managed visual QA uses pinned Playwright 1.61.0 in GitHub Actions; it is not shipped to site visitors.
 
 ## Acceptance checks
 
@@ -45,13 +47,15 @@ Explain the two-part T1D cure problem, modern cure research, the OSAN AI bionic 
 - Passed: prohibited medical hype claims are absent.
 - Passed: desktop and mobile layouts have no horizontal overflow or overlap.
 - Passed: public GitHub Pages URL returns HTTP 200 and the deployed Product scene updates the URL, copy, counter, selected stage, and artwork together.
+- Pending redesign proof: desktop, 1280 × 720 short desktop, tablet, 390 × 844 mobile, and 1200 × 630 social-card screenshots are visually clean and machine checks find no clipping, overlap, horizontal overflow, or browser errors.
 
 ## Observability
 
 - URL hash makes active state visible and shareable.
 - Git commit identifies the exact deployed source.
 - GitHub Pages deployment status and HTTP response provide live receipts.
-- A 1200 × 630 social card is versioned as `social-preview.png` for share previews.
+- A 1200 × 630 social card is versioned as `social-preview.jpg` for share previews.
+- `scripts/capture-visual-qa.mjs` records per-scene geometry, clipping, overflow, console, page-error, and request-failure signals in `report.json` beside the screenshot artifact.
 
 ## Security and privacy
 

@@ -1,9 +1,9 @@
 const scenes = [
   {
     hash: "problem",
-    eyebrow: "The foundational insight",
-    title: "T1D is two failures, not one.",
-    copy: "The immune system destroys the cells that sense glucose and release insulin. Replacing insulin treats the consequence—not both causes.",
+    eyebrow: "The root problem",
+    title: "T1D is two failures.",
+    copy: "The immune system destroys the beta cells that sense glucose and release insulin. Replacing insulin treats the consequence—not the autoimmune cause.",
     evidence: "FOUNDATIONAL",
     takeaway: "A real cure must restore pancreatic function and create immune peace.",
     frameLabel: "THE PROBLEM",
@@ -13,8 +13,8 @@ const scenes = [
   {
     hash: "equation",
     eyebrow: "The cure equation",
-    title: "Restore the cells. Protect the cells.",
-    copy: "Replacement cells can make insulin again. Immune tolerance can preserve them. Neither path is a complete cure on its own.",
+    title: "Restore the cells. Protect them.",
+    copy: "Replacement cells can make insulin again. Immune protection keeps them alive. A durable cure needs both.",
     evidence: "TWO REQUIREMENTS",
     takeaway: "The breakthrough is not one technology. It is the safe convergence of both.",
     frameLabel: "THE EQUATION",
@@ -24,8 +24,8 @@ const scenes = [
   {
     hash: "landscape",
     eyebrow: "The modern research landscape",
-    title: "Science is closing both gaps.",
-    copy: "Transplants prove insulin independence is possible. Stem cells address supply. Gene editing and tolerance research aim to remove chronic immunosuppression.",
+    title: "The cure is converging.",
+    copy: "Transplants prove the biology. Stem cells address supply. Gene editing and tolerance research aim to remove lifelong immunosuppression.",
     evidence: "APPROVED → EARLY HUMAN",
     takeaway: "The field is moving from isolated wins toward a scalable, protected cell system.",
     frameLabel: "THE LANDSCAPE",
@@ -35,8 +35,8 @@ const scenes = [
   {
     hash: "product",
     eyebrow: "The practical bridge",
-    title: "A bionic pancreas that thinks ahead.",
-    copy: "One wearable concept integrates continuous sensing, bounded predictive intelligence and automated delivery—designed to remove routine treatment decisions.",
+    title: "A pancreas that thinks ahead.",
+    copy: "One wearable concept combines continuous sensing, safety-bounded prediction and automated delivery—without routine treatment decisions.",
     evidence: "OSAN PRODUCT CONCEPT",
     takeaway: "Replace the daily management burden now, while biological restoration matures.",
     frameLabel: "THE PRODUCT",
@@ -46,8 +46,8 @@ const scenes = [
   {
     hash: "roadmap",
     eyebrow: "The platform thesis",
-    title: "Wearable today. Biohybrid tomorrow.",
-    copy: "The same platform can evolve from autonomous insulin delivery into a supervisor for living islet cells—and eventually a safety layer around biological restoration.",
+    title: "Wearable now. Biological next.",
+    copy: "The platform can evolve from autonomous delivery into a supervisor for living islet cells—and ultimately a safety layer around biological restoration.",
     evidence: "NOW → NEXT → NORTH STAR",
     takeaway: "The pod is not the endpoint. It is the bridge between engineered and biological control.",
     frameLabel: "THE ROADMAP",

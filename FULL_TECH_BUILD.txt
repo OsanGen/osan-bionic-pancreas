@@ -2,11 +2,11 @@
 
 ## 1. Snapshot header
 
-- Timestamp: 2026-07-20 22:44:05 EDT
+- Timestamp: 2026-07-20 22:45:13 EDT
 - Repository: `/Volumes/data/AI-P {Concept}`
 - Branch: `main`
-- HEAD: `d6aedb72f3b189e16e02ae133fd9b35f51bdf620`
-- Dirty state: yes; deployment receipts are being recorded after the verified release
+- HEAD: `9d13a8ee353103c6e069a1c6127086390e281653`
+- Dirty state: yes; only this self-referential snapshot refresh is uncommitted
 - Languages: HTML, CSS, JavaScript, SVG
 - Package manager: npm scripts only; no runtime packages or lockfile
 - Instruction files: global `/Users/abelsanchez/.codex/AGENTS.md`; no repository-local instruction file
@@ -15,7 +15,7 @@
 
 A shareable, investor-ready visual thesis that explains the two-part type 1 diabetes cure problem, the modern cell-replacement and immune-protection landscape, an OSAN AI bionic pancreas product concept, and a path toward biological restoration.
 
-User-facing artifacts: `index.html`, `styles.css`, `script.js`, `favicon.svg`, and `social-preview.png`.
+User-facing artifacts: `index.html`, `styles.css`, `script.js`, `favicon.svg`, and `social-preview.jpg`.
 
 ## 3. System map
 
@@ -75,7 +75,7 @@ Browser → `index.html` → `styles.css` + `script.js` → five local SVG scene
 ## 9. Rolling change log
 
 1. 2026-07-20 — Built five-scene OSAN visual thesis, evidence register, responsive controller, tests, documentation, and social card.
-2. 2026-07-20 — Published commit `d6aedb7` to a public GitHub repository, enabled HTTPS Pages, and verified the live page and Product-scene interaction.
+2. 2026-07-20 — Published content commit `d6aedb7`, pushed closure commit `9d13a8e`, enabled HTTPS Pages, and verified the live page and Product-scene interaction.
 
 ## 10. Refresh procedure
 

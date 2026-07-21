@@ -1,0 +1,42 @@
+name: Visual QA
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/clean-visual-redesign
+
+permissions:
+  contents: read
+
+concurrency:
+  group: visual-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.0-noble
+      options: --user 1001
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install the pinned Playwright library
+        run: npm install --no-save --ignore-scripts playwright@1.61.0
+
+      - name: Validate the static experience
+        run: npm run check
+
+      - name: Capture responsive screenshots
+        run: node scripts/capture-visual-qa.mjs
+
+      - name: Upload the visual evidence
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: visual-qa-${{ github.sha }}
+          path: visual-qa/
+          retention-days: 5

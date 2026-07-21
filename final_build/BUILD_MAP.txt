@@ -4,6 +4,8 @@
 
 Browser → `index.html` → `styles.css` + `script.js` → five local SVG story scenes
 
+Design branch → GitHub Actions managed runner → Playwright viewport matrix → screenshot artifact + machine-readable layout report
+
 No backend, database, analytics, cookies, authentication, remote API calls, or user-data collection.
 
 ## Components
@@ -12,6 +14,7 @@ No backend, database, analytics, cookies, authentication, remote API calls, or u
 - Visual system: OSAN CogSec Pastel tokens, Poppins/Inter typography, proof-first geometry, responsive layout.
 - Medical evidence register: five outbound primary-source references and explicit concept boundary.
 - Static host: GitHub Pages serving the repository root over HTTPS.
+- Visual QA: a pinned Playwright runner captures desktop, short-desktop, tablet, mobile, and social-card evidence without loading Mac A.
 
 ## Trust boundaries
 

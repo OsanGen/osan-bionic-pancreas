@@ -5,7 +5,7 @@
   "description": "OSAN five-scene visual thesis for the path toward a bionic pancreas.",
   "scripts": {
     "test": "node --test tests/site.test.mjs",
-    "check": "node --check script.js && node --test tests/site.test.mjs"
+    "check": "node --check script.js && node --check scripts/capture-visual-qa.mjs && node --test tests/site.test.mjs"
   },
   "engines": {
     "node": ">=18"
